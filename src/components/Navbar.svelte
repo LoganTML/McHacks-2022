@@ -14,11 +14,18 @@
 
 <style>
     header {
+        z-index: 100;
+        position: fixed;
         display: flex;
         justify-content: space-between;
         background-color: #060606;
         align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         height: 70px;
+        width: auto;
     }
     nav {
         display: flex;

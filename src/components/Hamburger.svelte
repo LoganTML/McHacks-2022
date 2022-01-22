@@ -23,7 +23,7 @@
 	}
 	
 	button {
-		z-index: 20;
+		z-index: 101;
 		background-color: transparent;
 		cursor: pointer;
 		border: none;

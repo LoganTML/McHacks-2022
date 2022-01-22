@@ -18,6 +18,9 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "aframe": "^1.2.0",
+    "aframe-ar": "^0.2.1-a",
+    "aframe-svelte": "^1.0.1",
     "sirv-cli": "^2.0.0"
   }
 }
