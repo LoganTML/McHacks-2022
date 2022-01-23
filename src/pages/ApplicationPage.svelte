@@ -19,16 +19,12 @@
         mounted = true;
     });
 
+
     function init() {
-        AFRAME.registerComponent('stuff', {
-            tick : function(time, timeDelta) {
-                this.el.object3D.position.y = Math.sin(time / 1000) * 2;
-            }
-        })
         initiated = true;
     }
 
-
+    export let file;
     
 </script>
 
@@ -44,18 +40,26 @@
 </svelte:head>
 
 {#if ready && initiated}
-  <a-scene
-    embedded
-    vr-mode-ui="enabled: false"
-    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-
-    <a-marker type="pattern" preset="hiro">
-        <!-- <a-box position='0 {10 * Math.sin()} 0' material='color: red; opacity: 0.5;'></a-box> -->
-        <a-entity stuff geometry="primitive: box; width: 1; height: 1; depth: 1"></a-entity>
-    </a-marker>
-    
-    <a-entity camera></a-entity>
-  </a-scene>
+<body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+        <!-- <a-entity gltf-model={file} rotation="-90 0 0" scale="0.01 0.01 0.01"></a-entity>
+        <a-marker-camera preset='hiro'></a-marker-camera>
+    </a-scene> -->
+    <!-- <script src="ar.js"></script> -->
+    <a-scene embedded arjs>
+        <a-entity
+                id='left'
+                rotation="-90 0 0"
+                position="0 0.5 0"
+                geometry="primitive: plane; width: 2; height: auto"
+                material="color: blue"
+                text="value: Room 1\n People: 1">
+        </a-entity>
+        <a-plane rotation="-90 0 0" position="0 0 0" src="https://media.giphy.com/media/oYtVHSxngR3lC/giphy.gif"></a-plane>
+        <a-entity id='right' scale='2 2 2' heigh=auto width=3 rotation="-90 0 0" position="0 0.5 0" text="value: Position\n Montreal; align: right"></a-entity>
+        <a-marker-camera preset='hiro'></a-marker-camera>
+    </a-scene>
+</body>
 {/if}
 
 <style>

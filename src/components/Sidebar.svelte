@@ -25,8 +25,9 @@
         display: flex;
         flex-direction: column;
         margin-top: 60px;
-        padding: 5px;
+        padding-top: 10px;
         font-size: larger;
+        height: 100%;
     }
 	
 	.open {
